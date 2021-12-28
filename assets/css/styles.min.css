@@ -1,0 +1,516 @@
+.contact-clean,
+.login-clean,
+.register-photo {
+ background: #f1f7fc;
+ padding: 80px 0
+}
+
+.contact-clean form {
+ max-width: 480px;
+ width: 90%;
+ margin: 0 auto;
+ background-color: #fff;
+ padding: 40px;
+ border-radius: 4px;
+ color: #505e6c;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
+}
+
+.contact-clean h2 {
+ margin-top: 5px;
+ font-weight: 700;
+ font-size: 28px;
+ margin-bottom: 36px;
+ color: inherit
+}
+
+.contact-clean form .form-control {
+ background: #fff;
+ border-radius: 2px;
+ box-shadow: 1px 1px 1px rgba(0, 0, 0, .05);
+ outline: 0;
+ color: inherit;
+ padding-left: 12px;
+ height: 42px
+}
+
+.contact-clean form .form-control:focus {
+ border: 1px solid #b2b2b2
+}
+
+.contact-clean form textarea.form-control {
+ min-height: 100px;
+ max-height: 260px;
+ padding-top: 10px;
+ resize: vertical
+}
+
+.contact-clean form .btn {
+ padding: 16px 32px;
+ border: none;
+ background: 0 0;
+ box-shadow: none;
+ text-shadow: none;
+ opacity: .9;
+ text-transform: uppercase;
+ font-weight: 700;
+ font-size: 13px;
+ letter-spacing: .4px;
+ line-height: 1;
+ outline: 0 !important
+}
+
+.contact-clean form .btn:hover,
+.footer-clean ul a:hover {
+ opacity: 1
+}
+
+.contact-clean form .btn:active,
+.login-clean form .btn-primary:active,
+.register-photo form .btn-primary:active {
+ transform: translateY(1px)
+}
+
+.contact-clean form .btn-primary {
+ background-color: #055ada !important;
+ margin-top: 15px;
+ color: #fff
+}
+
+.footer-clean {
+ padding: 50px 0;
+ background-color: #fff;
+ color: #4b4c4d
+}
+
+.footer-clean h3 {
+ margin-top: 0;
+ margin-bottom: 12px;
+ font-weight: 700;
+ font-size: 16px
+}
+
+.footer-clean ul {
+ padding: 0;
+ list-style: none;
+ line-height: 1.6;
+ font-size: 14px;
+ margin-bottom: 0
+}
+
+.footer-clean ul a {
+ color: inherit;
+ text-decoration: none;
+ opacity: .8
+}
+
+.footer-clean .item.social {
+ text-align: right
+}
+
+@media (max-width:768px) {
+ .footer-clean .item.social {
+  text-align: center
+ }
+}
+
+.footer-clean .item.social>a {
+ font-size: 24px;
+ width: 40px;
+ height: 40px;
+ line-height: 40px;
+ display: inline-block;
+ text-align: center;
+ border-radius: 50%;
+ border: 1px solid #ccc;
+ margin-left: 10px;
+ margin-top: 22px;
+ color: inherit;
+ opacity: .75
+}
+
+.footer-clean .item.social>a:hover {
+ opacity: .9
+}
+
+@media (max-width:991px) {
+ .footer-clean .item.social>a {
+  margin-top: 40px
+ }
+}
+
+@media (max-width:767px) {
+ .contact-clean {
+  padding: 20px 0
+ }
+
+ .contact-clean form {
+  padding: 30px
+ }
+
+ .footer-clean .item {
+  text-align: center;
+  padding-bottom: 20px
+ }
+
+ .footer-clean .item.social>a {
+  margin-top: 10px
+ }
+}
+
+.footer-clean .copyright {
+ margin-top: 14px;
+ margin-bottom: 0;
+ font-size: 13px;
+ opacity: .6
+}
+
+.all-capital {
+ text-transform: uppercase
+}
+
+.counter-font {
+ font-size: 60px;
+ font-weight: 500;
+ line-height: 76px;
+ letter-spacing: 0;
+ text-align: center
+}
+
+span.plus-k::after {
+ content: 'K +'
+}
+
+span.plus::after {
+ content: '+'
+}
+
+.Justify-Flex-Center {
+ display: flex;
+ justify-content: center;
+ display: flex;
+ justify-content: center;
+ align-items: center
+}
+
+.font-dark {
+ color: var(--primary-color)
+}
+
+.login-clean form {
+ max-width: 320px;
+ width: 90%;
+ margin: 0 auto;
+ background-color: #fff;
+ padding: 40px;
+ border-radius: 4px;
+ color: #505e6c;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
+}
+
+.login-clean .illustration {
+ text-align: center;
+ padding: 0 0 20px;
+ font-size: 100px;
+ color: #f4476b
+}
+
+.login-clean form .form-control {
+ background: #f7f9fc;
+ border: none;
+ border-bottom: 1px solid #dfe7f1;
+ border-radius: 0;
+ box-shadow: none;
+ outline: 0;
+ color: inherit;
+ text-indent: 8px;
+ height: 42px
+}
+
+.login-clean form .btn-primary {
+ background: #f4476b;
+ border: none;
+ border-radius: 4px;
+ padding: 11px;
+ box-shadow: none;
+ margin-top: 26px;
+ text-shadow: none;
+ outline: 0 !important
+}
+
+.login-clean form .btn-primary:active,
+.login-clean form .btn-primary:hover,
+.register-photo form .btn-primary:active,
+.register-photo form .btn-primary:hover {
+ background: #eb3b60
+}
+
+.login-clean form .forgot,
+.register-photo form .already {
+ display: block;
+ text-align: center;
+ font-size: 12px;
+ color: #6f7a85;
+ opacity: .9;
+ text-decoration: none
+}
+
+.login-clean form .forgot:active,
+.login-clean form .forgot:hover {
+ opacity: 1;
+ text-decoration: none
+}
+
+.navigation-clean,
+.navigation-clean-button {
+ background: #fff;
+ padding-top: .75rem;
+ padding-bottom: .75rem;
+ color: #333;
+ border-radius: 0;
+ box-shadow: none;
+ border: none;
+ margin-bottom: 0
+}
+
+.navigation-clean .navbar-brand,
+.navigation-clean-button .navbar-brand {
+ font-weight: 700;
+ color: inherit
+}
+
+.navigation-clean .navbar-brand:hover,
+.navigation-clean-button .navbar-brand:hover {
+ color: #222
+}
+
+.navigation-clean .navbar-toggler,
+.navigation-clean-button .navbar-toggler {
+ border-color: #ddd;
+ color: #888
+}
+
+.navigation-clean .navbar-toggler:focus,
+.navigation-clean .navbar-toggler:hover,
+.navigation-clean-button .navbar-toggler:focus,
+.navigation-clean-button .navbar-toggler:hover {
+ background: 0 0
+}
+
+.navigation-clean-button.navbar-light .navbar-nav a.active,
+.navigation-clean-button.navbar-light .navbar-nav a.active:focus,
+.navigation-clean-button.navbar-light .navbar-nav a.active:hover,
+.navigation-clean.navbar-light .navbar-nav .nav-link.active,
+.navigation-clean.navbar-light .navbar-nav .nav-link.active:focus,
+.navigation-clean.navbar-light .navbar-nav .nav-link.active:hover {
+ color: #8f8f8f;
+ box-shadow: none;
+ background: 0 0;
+ pointer-events: none
+}
+
+.navigation-clean-button.navbar .navbar-nav .nav-link,
+.navigation-clean.navbar .navbar-nav .nav-link {
+ padding-left: 18px;
+ padding-right: 18px
+}
+
+.navigation-clean-button.navbar-light .navbar-nav .nav-link,
+.navigation-clean.navbar-light .navbar-nav .nav-link {
+ color: #465765
+}
+
+.navigation-clean-button.navbar-light .navbar-nav .nav-link:focus,
+.navigation-clean-button.navbar-light .navbar-nav .nav-link:hover,
+.navigation-clean.navbar-light .navbar-nav .nav-link:focus,
+.navigation-clean.navbar-light .navbar-nav .nav-link:hover {
+ color: #37434d !important;
+ background-color: transparent
+}
+
+.navigation-clean .navbar-nav>li>.dropdown-menu {
+ margin-top: -5px;
+ box-shadow: none;
+ background-color: #fff;
+ border-radius: 2px
+}
+
+.navigation-clean .dropdown-menu .dropdown-item,
+.navigation-clean .dropdown-menu .dropdown-item:focus {
+ line-height: 2;
+ color: #37434d
+}
+
+.navigation-clean .dropdown-menu .dropdown-item:focus,
+.navigation-clean .dropdown-menu .dropdown-item:hover,
+.navigation-clean-button .dropdown-menu .dropdown-item:focus,
+.navigation-clean-button .dropdown-menu .dropdown-item:hover {
+ background: #eee;
+ color: inherit
+}
+
+@media (min-width:768px) {
+
+ .navigation-clean,
+ .navigation-clean-button {
+  padding-top: 1rem;
+  padding-bottom: 1rem
+ }
+}
+
+.navigation-clean-button .navbar-nav a.active,
+.navigation-clean-button .navbar-nav>.show>a {
+ background: 0 0;
+ box-shadow: none
+}
+
+.navigation-clean-button .navbar-nav>li>.dropdown-menu {
+ margin-top: -5px;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, .1);
+ background-color: #fff;
+ border-radius: 2px
+}
+
+.navigation-clean-button .dropdown-menu .dropdown-item,
+.navigation-clean-button .dropdown-menu .dropdown-item:focus {
+ line-height: 2;
+ font-size: 14px;
+ color: #37434d
+}
+
+.navigation-clean-button .actions .login {
+ margin-right: 1rem;
+ text-decoration: none;
+ color: #465765
+}
+
+.navigation-clean-button .navbar-text .action-button,
+.navigation-clean-button .navbar-text .action-button:active,
+.navigation-clean-button .navbar-text .action-button:hover {
+ background: #56c6c6;
+ border-radius: 20px;
+ font-size: inherit;
+ color: #fff;
+ box-shadow: none;
+ border: none;
+ text-shadow: none;
+ padding: .5rem 1rem;
+ transition: background-color .25s;
+ font-size: inherit
+}
+
+.navigation-clean-button .navbar-text .action-button:hover {
+ background: #66d7d7
+}
+
+.register-photo .image-holder {
+ display: table-cell;
+ width: auto;
+ background: url(/assets/img/meeting.jpg?h=dd656dce3d781a0a251d6d8ae7d6d913) 0 0/cover
+}
+
+.register-photo .form-container {
+ display: table;
+ max-width: 900px;
+ width: 90%;
+ margin: 0 auto;
+ box-shadow: 1px 1px 5px rgba(0, 0, 0, .1)
+}
+
+.register-photo form {
+ display: table-cell;
+ width: 400px;
+ background-color: #fff;
+ padding: 40px 60px;
+ color: #505e6c
+}
+
+@media (max-width:991px) {
+ .register-photo form {
+  padding: 40px
+ }
+}
+
+.register-photo form h2 {
+ font-size: 24px;
+ line-height: 1.5;
+ margin-bottom: 30px
+}
+
+.register-photo form .form-control {
+ background: #f7f9fc;
+ border: none;
+ border-bottom: 1px solid #dfe7f1;
+ border-radius: 0;
+ box-shadow: none;
+ outline: 0;
+ color: inherit;
+ text-indent: 6px;
+ height: 40px
+}
+
+.register-photo form .form-check {
+ font-size: 13px;
+ line-height: 20px
+}
+
+.register-photo form .btn-primary {
+ background: #f4476b;
+ border: none;
+ border-radius: 4px;
+ padding: 11px;
+ box-shadow: none;
+ margin-top: 35px;
+ text-shadow: none;
+ outline: 0 !important
+}
+
+.bill-header {
+ font-size: 12px;
+ text-align: center
+}
+
+.form-control:focus {
+ border-color: #25476a;
+ outline: 0;
+ -webkit-box-shadow: none;
+ box-shadow: none
+}
+
+#trs-hd,
+.warning.no-result {
+ text-align: center
+}
+
+.bill-header.cs {
+ background-color: rgba(37, 71, 106, .56);
+ color: #fff
+}
+
+.no-result,
+.results tr[visible=false] {
+ display: none
+}
+
+.counter {
+ padding: 8px;
+ color: #ccc
+}
+
+.fa.fa-warning {
+ font-size: 18px;
+ color: red
+}
+
+.search.form-control {
+ border-radius: 0 !important
+}
+
+.search-table-col {
+ margin-top: 100px
+}
+
+#section {
+
+ background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
+}
