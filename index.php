@@ -52,7 +52,8 @@
         </div>
       </div>
     </div>
-  </section><!-- End: Incrementing Animation -->
+  </section>
+  <!-- End: Incrementing Animation -->
 
 
   <script src="./assets/js/script.min.js?h=eb1f68cfb4a8e6bfebef5f9dbf486544"></script>
