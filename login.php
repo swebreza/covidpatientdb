@@ -20,9 +20,9 @@ if (isset($_POST['username'])) {
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_num_rows($result) > 0) {
-    $_SESSION['userid'] = $row['id'];
-    while ($row = mysqli_fetch_array($result)) {
 
+    while ($row = mysqli_fetch_array($result)) {
+      // $GLOBALS['userid'] = $row['id'];
       header('Location:  dashboard.php');
     }
   } else {

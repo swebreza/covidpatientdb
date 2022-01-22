@@ -79,10 +79,8 @@
           if (!$conn) {
             die("connection to this database failed due to" . mysqli_connect_error());
           }
-
           $sql = "SELECT * FROM covid_patient.patient";
           $result = mysqli_query($conn, $sql);
-
           if ($result->num_rows <= 0) {
             echo '<tr class="warning no-result">
             <td colspan="12"><i class="fa fa-warning"></i> No Result !!!</td>

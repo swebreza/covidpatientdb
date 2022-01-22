@@ -45,7 +45,7 @@
           $sql = "SELECT * FROM covid_patient.hospital";
           $result = mysqli_query($conn, $sql);
           session_start();
-          $userid = $_SESSION['userid'];
+          // $userid = $_SESSION['userid'];
 
           if ($result->num_rows <= 0) {
             echo '<tr class="warning no-result">
@@ -53,7 +53,7 @@
           </tr>';
           } else {
             while ($row = $result->fetch_assoc()) {
-              echo $userid;
+              // echo $userid;
               echo '
                   <tr>
                     <td>' . $row["hid"] . '</td>
