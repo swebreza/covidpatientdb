@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 21, 2022 at 01:03 PM
+-- Generation Time: Jan 31, 2022 at 04:27 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -33,6 +33,13 @@ CREATE TABLE `covid_test` (
   `pid` int(11) NOT NULL,
   `hid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `covid_test`
+--
+
+INSERT INTO `covid_test` (`test_no`, `test_type`, `pid`, `hid`) VALUES
+(112, 'pcr', 1, 10);
 
 -- --------------------------------------------------------
 
@@ -71,7 +78,9 @@ CREATE TABLE `hospital` (
 --
 
 INSERT INTO `hospital` (`hid`, `hname`, `location`) VALUES
-(10, 'Apollo', '8th mile, bangalore');
+(10, 'Apollo', '8th mile, bangalore'),
+(11, 'Colombia', 'Mangalore'),
+(12, 'Saptgari ', 'janapriya apartment');
 
 -- --------------------------------------------------------
 
@@ -99,7 +108,8 @@ INSERT INTO `patient` (`pid`, `pname`, `phno`, `age`, `symptoms`, `bloodtype`, `
 (2, 'aas', 4445556, 54, 'trghd', 'e', 'Apple@gmail.com', 'dfgb'),
 (3, '', 2147483647, 22, 'cough', 'b+', 'admin@gmail.com', 'Bangalore'),
 (7, 'Apple', 2147483647, 44, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
-(12, 'Jonwdasdd', 2147483647, 444, 'none', 'b+', 'admin@gmail.com', 'Bangalore');
+(12, 'Jonwdasdd', 2147483647, 444, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
+(16, 'Hiten', 1547975343, 20, 'cough ', 'ab+', 'hiten@hiten.com', 'Bangalore');
 
 -- --------------------------------------------------------
 
@@ -112,13 +122,6 @@ CREATE TABLE `report` (
   `hid` int(11) NOT NULL,
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `report`
---
-
-INSERT INTO `report` (`pid`, `hid`, `status`) VALUES
-(1, 10, 'positive');
 
 -- --------------------------------------------------------
 
@@ -141,6 +144,16 @@ INSERT INTO `test` (`sno`, `name`, `email`, `message`) VALUES
 (1, 'Admin', 'admin@admin.com', 'Hi. this is just a test message \r\n'),
 (2, 'test', 'dgddgf@dfgds.com', 'This is message from webpage'),
 (3, 'test', 'dgddgf@dfgds.com', 'This is message from webpage');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trigger`
+--
+
+CREATE TABLE `trigger` (
+  `total_patient` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -219,7 +232,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `covid_test`
 --
 ALTER TABLE `covid_test`
-  MODIFY `test_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=112;
+  MODIFY `test_no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
 
 --
 -- AUTO_INCREMENT for table `doctor`
@@ -231,13 +244,13 @@ ALTER TABLE `doctor`
 -- AUTO_INCREMENT for table `hospital`
 --
 ALTER TABLE `hospital`
-  MODIFY `hid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `hid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `test`

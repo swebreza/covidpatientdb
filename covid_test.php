@@ -51,61 +51,61 @@
                           </tr>
                      </thead>
                      <tbody>
-                          
 
-                               <?php
+
+                          <?php
+                              $server = 'localhost';
+                              $user = "root";
+                              $password = "";
+                              $conn = mysqli_connect($server, $user, $password);
+                              // $sql = "SELECT p.pid FROM covid_patient.covid_patient p,covid_patient.covid_test c where p.pid != c.pid";
+                              $sql = "SELECT p.pid AS id FROM `covid_patient` . `patient` p,`covid_patient` . `covid_test` c WHERE c.pid <> p.pid; ";
+                              $result = mysqli_query($conn, $sql);
+                              // echo $sql;
+
+
+                              function Hospitals()
+                              {
                                    $server = 'localhost';
                                    $user = "root";
                                    $password = "";
                                    $conn = mysqli_connect($server, $user, $password);
-                                   // $sql = "SELECT p.pid FROM covid_patient.covid_patient p,covid_patient.covid_test c where p.pid != c.pid";
-                                   $sql = "SELECT p.pid AS id FROM `covid_patient` . `patient` p,`covid_patient` . `covid_test` c WHERE c.pid <> p.pid; ";
-                                   $result = mysqli_query($conn, $sql);
-                                   // echo $sql;
-
-
-                                   function Hospitals()
-                                   {
-                                        $server = 'localhost';
-                                        $user = "root";
-                                        $password = "";
-                                        $conn = mysqli_connect($server, $user, $password);
-                                        $sqlh = "SELECT * FROM covid_patient.hospital";
-                                        $resulth = mysqli_query($conn, $sqlh);
-                                        while ($rowh = mysqli_fetch_assoc($resulth)) {
-                                             echo '<option value="' . $rowh['hid'] . '">' . $rowh['hname'] . '</option>';
-                                        }
+                                   $sqlh = "SELECT * FROM covid_patient.hospital";
+                                   $resulth = mysqli_query($conn, $sqlh);
+                                   while ($rowh = mysqli_fetch_assoc($resulth)) {
+                                        echo '<option value="' . $rowh['hid'] . '">' . $rowh['hname'] . '</option>';
                                    }
-                                   if (mysqli_num_rows($result) < 0) {
-                                        echo ' No Result !!!';
-                                   } else {
+                              }
+                              if (mysqli_num_rows($result) < 0) {
+                                   echo ' No Result !!!';
+                              } else {
 
-                                        while ($row = $result->fetch_assoc()) {
-                                             echo '<form method="post">';
-                                             echo ' <tr><td  value="' . $row['id'] . '" name="' . $row['id'] . '">' . $row['id'] . '</td>
+                                   while ($row = $result->fetch_assoc()) {
+                                        echo '<form method="post">';
+                                        echo ' <tr><td  value="' . $row['id'] . '" name="' . $row['id'] . '">' . $row['id'] . '</td>
                                                   <td>
                                          <select name="status">
                                               <option value="positive">Positive</option>
                                               <option value="negative">Negative</option>
                                          </select>
-                                         </td>';?>
-                                         <td><select name="hospital">';
-                                         <?php
-                                             Hospitals();
-                                             echo ' </select>
+                                         </td>'; ?>
+                                    <td><select name="hospital">';
+                                    <?php
+                                        Hospitals();
+                                        echo ' </select>
                                                   </td>
                                                   <td><button class="btn btn-primary" type="submit" onclick="' . submitHandel($row['id']) . '" > Submit</button></td></tr>
                                              ';
-                                             echo '</form>';
-                                        }
+                                        echo '</form>';
                                    }
+                              }
 
 
-                                             ?>
+                                        ?>
 
 
 
-                          
+
                      </tbody>
                 </table>
 
