@@ -29,7 +29,7 @@
             <th id="trs-hd-1" class="col-lg-1">SL. No.</th>
             <th id="trs-hd-2" class="col-lg-2">Hospital Name</th>
             <th id="trs-hd-3" class="col-lg-3">Location</th>
-            <th id="trs-hd-6" class="col-lg-2">Action</th>
+            <!-- <th id="trs-hd-6" class="col-lg-2">Action</th> -->
           </tr>
         </thead>
         <tbody>
@@ -59,10 +59,11 @@
                     <td>' . $row["hid"] . '</td>
                     <td>' . $row["hname"] . '</td>
                     <td>' . $row["location"] . '</td>
-                    
-                    <td><button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button><button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button></td>
-                  </tr>';
+                     </tr>
+                    ';
             }
+            // <td><button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button><button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button></td>
+                 
           }
           $conn->close();
           ?>

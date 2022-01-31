@@ -51,7 +51,7 @@
                           </tr>
                      </thead>
                      <tbody>
-                          <form method="post">
+                          
 
                                <?php
                                    $server = 'localhost';
@@ -73,7 +73,7 @@
                                         $sqlh = "SELECT * FROM covid_patient.hospital";
                                         $resulth = mysqli_query($conn, $sqlh);
                                         while ($rowh = mysqli_fetch_assoc($resulth)) {
-                                             echo '<option value="' . $rowh['hid'] . '">' . $rowh['hname'] . '"</option>"';
+                                             echo '<option value="' . $rowh['hid'] . '">' . $rowh['hname'] . '</option>';
                                         }
                                    }
                                    if (mysqli_num_rows($result) < 0) {
@@ -81,13 +81,14 @@
                                    } else {
 
                                         while ($row = $result->fetch_assoc()) {
-                                             echo '<tr><td  value="' . $row['id'] . '" name="' . $row['id'] . '">' . $row['id'] . '</td>
-                                                  <td>'; ?>
+                                             echo '<form method="post">';
+                                             echo ' <tr><td  value="' . $row['id'] . '" name="' . $row['id'] . '">' . $row['id'] . '</td>
+                                                  <td>
                                          <select name="status">
                                               <option value="positive">Positive</option>
                                               <option value="negative">Negative</option>
                                          </select>
-                                         </td>
+                                         </td>';?>
                                          <td><select name="hospital">';
                                          <?php
                                              Hospitals();
@@ -95,6 +96,7 @@
                                                   </td>
                                                   <td><button class="btn btn-primary" type="submit" onclick="' . submitHandel($row['id']) . '" > Submit</button></td></tr>
                                              ';
+                                             echo '</form>';
                                         }
                                    }
 
@@ -103,7 +105,7 @@
 
 
 
-                          </form>
+                          
                      </tbody>
                 </table>
 

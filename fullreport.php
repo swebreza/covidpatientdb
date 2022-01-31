@@ -9,20 +9,8 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-light navbar-expand-lg navigation-clean">
-    <div class="container"><a class="navbar-brand" href="#">Covid Patient</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navcol-1">
-        <ul class="navbar-nav ms-auto">
-          <!-- <li class="nav-item"><a class="nav-link " href="index.php">Home</a></li>
-          <li class="nav-item"><a class="nav-link " href="hospital.php">Hospital</a></li> -->
-          <li class="nav-item"><a class="nav-link " href="report.php">Report</a></li>
-          <li class="nav-item"><a class="btn btn-primary" href="login.php" style="margin: 5px;">Login</a></li>
-          <li class="nav-item"><a class="btn btn-primary" href="signup.php" style="margin: 5px;">Signup</a></li>
-
-        </ul>
-      </div>
-    </div>
-  </nav><!-- End: Navigation Clean -->
+    <!-- <?php include './assets/base/nav.html'; ?> -->
+<!-- End: Navigation Clean -->
 
   <?php
 
@@ -101,15 +89,15 @@
 
         
         </tbody>
-      </table>';
+      </table><button class="btn btn-primary" type="button" style="text-align: center;margin-left: 50%;" onclick="window.print()">Download</button>';
       }
     } else {
-      echo "0 results";
+      echo "<center>No Recode found </center>";
     }
     session_abort();
   }
   ?>
-  <button class="btn btn-primary" type="button" style="text-align: center;margin-left: 50%;" onclick="window.print()">Download</button>
+
 
 </body>
 
