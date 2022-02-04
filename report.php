@@ -26,8 +26,8 @@
 
  <body>
    <!-- Start: Navigation with Button -->
-     <!-- <?php include './assets/base/nav.html'; ?> -->
-<!-- End: Navigation Clean -->
+   <!-- <?php include './assets/base/nav.html'; ?> -->
+   <!-- End: Navigation Clean -->
    <!-- End: Navigation with Button -->
    <center>
      <form class="form-horizontal " style="padding-top: 4em;" method='get' action="fullreport.php">
@@ -38,19 +38,6 @@
        </div>
      </form>
    </center>
-
-   <div class="table-responsive" style="text-align: center;margin: 2em;">
-     <table class="table">
-       <thead style="display: none;">
-         <tr style="display: none;"></tr>
-       </thead>
-       <tbody>
-
-
-         </tr>
-       </tbody>
-     </table>
-
  </body>
 
  </html>

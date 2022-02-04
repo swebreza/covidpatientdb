@@ -9,8 +9,8 @@
 </head>
 
 <body>
-    <!-- <?php include './assets/base/nav.html'; ?> -->
-<!-- End: Navigation Clean -->
+  <!-- <?php include './assets/base/nav.html'; ?> -->
+  <!-- End: Navigation Clean -->
 
   <?php
 
@@ -35,8 +35,10 @@
 
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_array($result)) {
-        echo '
-       <table class="table">
+        echo '<b><center>
+       <table border="3" style="color:#000; margin-left: auto;
+    margin-right: auto;
+    width: 50em">
         <thead style="display: none;">
           <tr style="display: none;"></tr>
         </thead>
@@ -89,7 +91,7 @@
 
         
         </tbody>
-      </table><button class="btn btn-primary" type="button" style="text-align: center;margin-left: 50%;" onclick="window.print()">Download</button>';
+      </table><center></b><button class="btn btn-primary" type="button" style="text-align: center;margin-left: 50%;" onclick="window.print()">Download</button>';
       }
     } else {
       echo "<center>No Recode found </center>";

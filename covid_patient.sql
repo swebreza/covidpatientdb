@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2022 at 04:27 PM
+-- Generation Time: Feb 04, 2022 at 08:52 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -106,10 +106,36 @@ CREATE TABLE `patient` (
 INSERT INTO `patient` (`pid`, `pname`, `phno`, `age`, `symptoms`, `bloodtype`, `email`, `address`) VALUES
 (1, 'd', 1234567890, 0, 'thdrg', 'rt', 'admin@admin.com', 'ews'),
 (2, 'aas', 4445556, 54, 'trghd', 'e', 'Apple@gmail.com', 'dfgb'),
-(3, '', 2147483647, 22, 'cough', 'b+', 'admin@gmail.com', 'Bangalore'),
+(3, 'pdf', 2147483647, 22, 'cough', 'b+', 'admin@gmail.com', 'Bangalore'),
 (7, 'Apple', 2147483647, 44, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
 (12, 'Jonwdasdd', 2147483647, 444, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
-(16, 'Hiten', 1547975343, 20, 'cough ', 'ab+', 'hiten@hiten.com', 'Bangalore');
+(16, 'Hiten', 1547975343, 20, 'cough ', 'ab+', 'hiten@hiten.com', 'Bangalore'),
+(17, 'kash', 2147483647, 28, 'cough', 'AB-', 'afhaivhj@dvsdkjnb.sdk', 'dfhnklj;f zbvlisznbfh nzjxkcv hjksd njvcsd kj vnzx nkvcsdnd sjk;f d kvasd');
+
+--
+-- Triggers `patient`
+--
+DELIMITER $$
+CREATE TRIGGER `total_patient` AFTER INSERT ON `patient` FOR EACH ROW SET @count = 'SELECT COUNT(pid) AS totalp FROM patient'
+$$
+DELIMITER ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient_backup`
+--
+
+CREATE TABLE `patient_backup` (
+  `pid` int(11) NOT NULL,
+  `pname` varchar(255) NOT NULL,
+  `phno` int(11) NOT NULL,
+  `age` int(11) NOT NULL,
+  `symptoms` varchar(255) NOT NULL,
+  `bloodtype` varchar(100) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -122,6 +148,13 @@ CREATE TABLE `report` (
   `hid` int(11) NOT NULL,
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `report`
+--
+
+INSERT INTO `report` (`pid`, `hid`, `status`) VALUES
+(2, 12, 'positive');
 
 -- --------------------------------------------------------
 
@@ -144,16 +177,6 @@ INSERT INTO `test` (`sno`, `name`, `email`, `message`) VALUES
 (1, 'Admin', 'admin@admin.com', 'Hi. this is just a test message \r\n'),
 (2, 'test', 'dgddgf@dfgds.com', 'This is message from webpage'),
 (3, 'test', 'dgddgf@dfgds.com', 'This is message from webpage');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `trigger`
---
-
-CREATE TABLE `trigger` (
-  `total_patient` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -206,11 +229,10 @@ ALTER TABLE `patient`
   ADD PRIMARY KEY (`pid`);
 
 --
--- Indexes for table `report`
+-- Indexes for table `patient_backup`
 --
-ALTER TABLE `report`
-  ADD KEY `report_ibfk_2` (`pid`),
-  ADD KEY `hid` (`hid`);
+ALTER TABLE `patient_backup`
+  ADD PRIMARY KEY (`pid`);
 
 --
 -- Indexes for table `test`
@@ -250,7 +272,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `test`
@@ -274,13 +296,6 @@ ALTER TABLE `users`
 ALTER TABLE `covid_test`
   ADD CONSTRAINT `covid_test_ibfk_1` FOREIGN KEY (`pid`) REFERENCES `patient` (`pid`),
   ADD CONSTRAINT `covid_test_ibfk_2` FOREIGN KEY (`hid`) REFERENCES `hospital` (`hid`);
-
---
--- Constraints for table `report`
---
-ALTER TABLE `report`
-  ADD CONSTRAINT `report_ibfk_2` FOREIGN KEY (`pid`) REFERENCES `patient` (`pid`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `report_ibfk_3` FOREIGN KEY (`hid`) REFERENCES `hospital` (`hid`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
