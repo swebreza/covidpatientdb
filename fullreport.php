@@ -28,21 +28,16 @@
 
 
 
-    $sql = "SELECT * FROM `covid_patient` . `patient` p, `covid_patient` . `hospital` h,`covid_patient` . `report` r WHERE p.pid=$pid and p.pid=r.pid and h.hid=r.hid  ";
+    $sql = "SELECT * FROM `covid_patient` . `doctor` d,`covid_patient` . `patient` p, `covid_patient` . `hospital` h,`covid_patient` . `report` r WHERE p.pid=$pid and p.pid=r.pid and h.hid=r.hid and d.did=r.did ";
 
     $result = mysqli_query($conn, $sql);
 
 
     if (mysqli_num_rows($result) > 0) {
       while ($row = mysqli_fetch_array($result)) {
-        echo '<b><center>
-       <table border="3" style="color:#000; margin-left: auto;
-    margin-right: auto;
-    width: 50em">
-        <thead style="display: none;">
-          <tr style="display: none;"></tr>
-        </thead>
-        <tbody>
+        echo '<b><center style="color:#000; padding-top:5em;">
+       <table border="3" style="width:50em;padding-left:5em;" >
+        
         <tr>
           <td>ID</td>
           <td>' . $row["pid"] . '</td>
@@ -85,13 +80,25 @@
           <td>' . $row["hname"] . '</td>
         </tr>
         <tr>
+          <td>Doctor Name</td>
+          <td>' . $row["dname"] . '</td>
+        </tr>
+        <tr>
+          <td>Doctor Registration no</td>
+          <td>' . $row["reg_no"] . '</td>
+        </tr>
+        <tr>
+          <td>Doctor Qualification</td>
+          <td>' . $row["qualification"] . '</td>
+        </tr>
+        <tr>
           <td>Location</td>
           <td>' . $row["location"] . '</td>
         </tr>
 
         
-        </tbody>
-      </table><center></b><button class="btn btn-primary" type="button" style="text-align: center;margin-left: 50%;" onclick="window.print()">Download</button>';
+        
+      </table><center></b><button class="btn btn-primary" type="button" style="text-align: center;margin-top:3em;" onclick="window.print()">Download</button>';
       }
     } else {
       echo "<center>No Recode found </center>";

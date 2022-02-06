@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 04, 2022 at 08:52 PM
+-- Generation Time: Feb 06, 2022 at 01:12 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.25
 
@@ -110,11 +110,18 @@ INSERT INTO `patient` (`pid`, `pname`, `phno`, `age`, `symptoms`, `bloodtype`, `
 (7, 'Apple', 2147483647, 44, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
 (12, 'Jonwdasdd', 2147483647, 444, 'none', 'b+', 'admin@gmail.com', 'Bangalore'),
 (16, 'Hiten', 1547975343, 20, 'cough ', 'ab+', 'hiten@hiten.com', 'Bangalore'),
-(17, 'kash', 2147483647, 28, 'cough', 'AB-', 'afhaivhj@dvsdkjnb.sdk', 'dfhnklj;f zbvlisznbfh nzjxkcv hjksd njvcsd kj vnzx nkvcsdnd sjk;f d kvasd');
+(17, 'kash', 2147483647, 28, 'cough', 'AB-', 'afhaivhj@dvsdkjnb.sdk', 'dfhnklj;f zbvlisznbfh nzjxkcv hjksd njvcsd kj vnzx nkvcsdnd sjk;f d kvasd'),
+(18, 'Kasturi', 1111445201, 25, 'Cough', 'AB+', 'kast@tu.re', 'Bangalore');
 
 --
 -- Triggers `patient`
 --
+DELIMITER $$
+CREATE TRIGGER `patient_Backup` AFTER INSERT ON `patient` FOR EACH ROW BEGIN
+INSERT into patient_backup VALUES(NEW.pid,NEW.pname,NEW.phno,NEW.age,NEW.symptoms,NEW.bloodtype,NEW.email,NEW.address);
+END
+$$
+DELIMITER ;
 DELIMITER $$
 CREATE TRIGGER `total_patient` AFTER INSERT ON `patient` FOR EACH ROW SET @count = 'SELECT COUNT(pid) AS totalp FROM patient'
 $$
@@ -137,6 +144,13 @@ CREATE TABLE `patient_backup` (
   `address` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `patient_backup`
+--
+
+INSERT INTO `patient_backup` (`pid`, `pname`, `phno`, `age`, `symptoms`, `bloodtype`, `email`, `address`) VALUES
+(18, 'Kasturi', 1111445201, 25, 'Cough', 'AB+', 'kast@tu.re', 'Bangalore');
+
 -- --------------------------------------------------------
 
 --
@@ -146,6 +160,7 @@ CREATE TABLE `patient_backup` (
 CREATE TABLE `report` (
   `pid` int(11) NOT NULL,
   `hid` int(11) NOT NULL,
+  `did` int(11) NOT NULL,
   `status` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -153,8 +168,9 @@ CREATE TABLE `report` (
 -- Dumping data for table `report`
 --
 
-INSERT INTO `report` (`pid`, `hid`, `status`) VALUES
-(2, 12, 'positive');
+INSERT INTO `report` (`pid`, `hid`, `did`, `status`) VALUES
+(18, 12, 1, 'positive'),
+(2, 12, 1, 'negative');
 
 -- --------------------------------------------------------
 
@@ -272,7 +288,7 @@ ALTER TABLE `hospital`
 -- AUTO_INCREMENT for table `patient`
 --
 ALTER TABLE `patient`
-  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `pid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `test`

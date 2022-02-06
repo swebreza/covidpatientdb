@@ -18,10 +18,10 @@
   <!-- Start: Incrementing Animation -->
   <?php include './count.php'; ?>
   <!-- End: Incrementing Animation -->
-  <div>
-    <button class="btn btn-success" style="margin-left: 5px;">
-      <a href='./register.php' style="color: aliceblue;">Add Patient</a>
-    </button>
+  <div><a href='./register.php' style="color: aliceblue;">
+      <button class="btn btn-success" style="margin-left: 5px;">
+        Add Patient
+      </button></a>
   </div>
   <!-- Start: Table With Search -->
   <div class="col-md-12 search-table-col">

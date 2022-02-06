@@ -11,7 +11,8 @@
           $pid = $_POST['pid'];
           $status = $_POST['status'];
           $hospital = $_POST['hospital'];
-          $sql = "INSERT INTO `covid_patient`.`report`( `pid`,`hid`,`status`) VALUES ('$pid','$hospital','$status')";
+          $doctor = $_POST['doctor'];
+          $sql = "INSERT INTO `covid_patient`.`report`( `pid`,`hid`,`did`,`status`) VALUES ('$pid','$hospital','$doctor','$status')";
           // $result = mysqli_query($conn, $sql);
           if ($conn->query($sql) === true) {
                echo '<div class="alert alert-success" role="alert">
@@ -45,6 +46,7 @@
                 <div class="mb-3"><input class="form-control" type="text" name="pid" placeholder="Patient id" required></div>
                 <div class="mb-3"><input class="form-control" type="text" name="status" placeholder="Current status in lower case" required></div>
                 <div class="mb-3"><input class="form-control" type="text" name="hospital" placeholder="Hospital ID" required></div>
+                <div class="mb-3"><input class="form-control" type="text" name="doctor" placeholder="Doctor ID" required></div>
                 <div class="mb-3">
                      <button class="btn btn-primary" type="submit">Submit</button>
                 </div>

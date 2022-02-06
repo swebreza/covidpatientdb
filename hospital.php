@@ -13,10 +13,16 @@
   <?php include './assets/base/nav.html'; ?>
 
   <h1>Hospital</h1>
-  <p style="padding: 3em;">
-    <button class="btn btn-success" style="margin-left: 5px;">
-      <a href='./covid_test.php' style="color: aliceblue;">Review Patient Report</a>
-    </button>
+  <p style="padding: 3em;"><a href='./covid_test.php' style="color: aliceblue;">
+      <button class="btn btn-success" style="margin-left: 5px;">
+        Review Patient Report
+      </button></a>
+
+  </p>
+  <p style="padding: 3em;"><a href='./doctor.php' style="color: aliceblue;">
+      <button class="btn btn-success" style="margin-left: 5px;">
+        List of Doctors
+      </button></a>
 
   </p>
   <!-- Start: Table With Search -->
@@ -63,7 +69,7 @@
                     ';
             }
             // <td><button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button><button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button></td>
-                 
+
           }
           $conn->close();
           ?>
