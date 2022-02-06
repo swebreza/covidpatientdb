@@ -27,8 +27,9 @@
     <thead class="bill-header cs">
      <tr>
       <th id="trs-hd-1" class="col-lg-1">SL. No.</th>
-      <th id="trs-hd-2" class="col-lg-2">Hospital Name</th>
-      <th id="trs-hd-3" class="col-lg-3">Location</th>
+      <th id="trs-hd-2" class="col-lg-2">Doctor Name</th>
+      <th id="trs-hd-3" class="col-lg-3">Reg_no</th>
+      <th id="trs-hd-3" class="col-lg-3">Qualification</th>
       <!-- <th id="trs-hd-6" class="col-lg-2">Action</th> -->
      </tr>
     </thead>
