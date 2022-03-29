@@ -56,6 +56,8 @@ if (isset($_POST['username'])) {
       <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Log In</button></div>
       New to this site?
       <a class="forgot" href="signup.php">signup</a>
+
+      <a class="forgot" href="forgotpass.html">forgot password?</a>
     </form>
   </section><!-- End: Login Form Clean -->
 </body>

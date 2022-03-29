@@ -101,7 +101,8 @@
       </table><center></b><button class="btn btn-primary" type="button" style="text-align: center;margin-top:3em;" onclick="window.print()">Download</button>';
       }
     } else {
-      echo "<center>No Recode found </center>";
+      echo ' <center><br/> </br>   <a href="index.php"><button class="btn btn-primary" >Back to Home</button></a>
+      </br></br></br></br></br></br></br>No Record Found </center>';
     }
     session_abort();
   }
